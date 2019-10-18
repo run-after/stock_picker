@@ -5,21 +5,21 @@ def stock_picker(array)
     largest_index = 1
     smallest_index = 0
 
-array.each { |small| 
+array.each_with_index { |small, small_index| 
     
-    array.each { |large| 
+    array.each_with_index { |large, large_index| 
         
-    if small < smallest && array.index(small) < largest_index
+    if small < smallest && small_index < largest_index
      
             smallest = small
-            smallest_index = array.index(small)
+            smallest_index = small_index
         #puts 'smallest = ' + smallest.to_s
         
     end
-    if large > largest && array.index(large) > smallest_index 
+    if large > largest && large_index > smallest_index 
         
             largest = large
-            largest_index = array.index(large)
+            largest_index = large_index
         #puts "largest = " + largest.to_s
     end
         
